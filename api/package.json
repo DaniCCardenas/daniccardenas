@@ -1,0 +1,17 @@
+{
+  "name": "daniccardenas-api",
+  "version": "1.0.0",
+  "description": "Azure Functions backend for daniccardenas.com",
+  "main": "src/functions/*.js",
+  "scripts": {
+    "start": "func start",
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "~5.5.0"
+  }
+}

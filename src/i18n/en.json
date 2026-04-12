@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "about": "About",
+    "certifications": "Certifications",
+    "focus": "Focus Areas",
+    "projects": "Projects",
+    "articles": "Articles",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hey, I'm",
+    "name": "Daniel Córdoba",
+    "role": "Solutions Architect | Microsoft MVP",
+    "tagline": "Designing solutions on Azure, Dynamics 365, Power Platform, and AI, combining architecture, technical pre-sales, and leadership to move projects toward successful delivery.",
+    "photo_placeholder": "Photo coming soon",
+    "cta_projects": "See my projects",
+    "cta_contact": "Get in touch",
+    "available": "Open to work"
+  },
+  "certifications": {
+    "title": "Certifications & Recognition",
+    "subtitle": "A section centered on my Microsoft MVP recognition in Business Applications and my Azure certification path across architecture, development, DevOps, and artificial intelligence.",
+    "azure_title": "Microsoft Certified: Azure",
+    "azure_subtitle": "These are the Azure certifications I currently highlight, focused on cloud development and solution architecture.",
+    "azure_badges": {
+      "developer_title": "Microsoft Certified: Azure Developer Associate",
+      "developer_subtitle": "Certification focused on designing, building, testing, and maintaining cloud applications and services on Azure.",
+      "architect_title": "Microsoft Certified: Azure Solutions Architect Expert",
+      "architect_subtitle": "Certification focused on designing secure, scalable cloud solutions on Azure aligned with business requirements."
+    },
+    "mvp_title": "Microsoft MVP",
+    "mvp_subtitle": "Microsoft recognition in the Business Applications category for my technical specialization, community contribution, and continued work across Microsoft's business and technology ecosystem.",
+    "mvp_badge": "MVP Business Applications"
+  },
+  "about": {
+    "title": "About me",
+    "p1": "I'm a technology consultant and solutions architect specialized in web environments built on Microsoft technologies. I enjoy turning complex ideas into clear, workable architectures and staying close to delivery so projects move forward with strong technical judgment and practical focus.",
+    "p2": "Beyond architecture, I also contribute to technical pre-sales, estimations, project follow-up, and team coordination. In short, I'm comfortable moving between strategic conversations and hands-on technical work. And yes, I still write code whenever I get the chance.",
+    "p3": "In recent years, my work has been especially focused on Azure, Dynamics 365, Power Platform, and generative AI initiatives applied to real business scenarios. I've worked both in large consulting firms and in growing start-ups, and that mix shaped a straightforward way of working: do things properly, without making them more complicated than they need to be.",
+    "resume": "Download resume"
+  },
+  "focus": {
+    "title": "Focus Areas",
+    "subtitle": "The domains where I spend most of my time building, learning, and consulting.",
+    "cloud": {
+      "title": "Cloud",
+      "description": "Designing and building cloud-native architectures on Azure. Infrastructure as code, serverless, microservices, DevOps, and cost-efficient solutions that scale."
+    },
+    "ai": {
+      "title": "Artificial Intelligence",
+      "description": "Applying AI to real-world problems — from LLM integrations and RAG pipelines to Azure AI services, Copilot extensibility, and responsible AI practices."
+    },
+    "powerplatform": {
+      "title": "Power Platform",
+      "description": "Leveraging Power Apps, Power Automate, and Copilot Studio to digitize processes, surface insights, and empower business users to build their own solutions."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of products, content, and initiatives where I'm building, sharing, or contributing value.",
+    "view_github": "GitHub",
+    "view_live": "Live",
+    "view_all": "View all on GitHub",
+    "wip": "More coming soon",
+    "items": {
+      "project1": {
+        "title": "TheContent.ai",
+        "description": "TheContent.ai is a platform where I am co-founder and CTO. I have led and built its technology foundation, combining product thinking, architecture, and artificial intelligence to create a real solution for creators and content."
+      },
+      "project2": {
+        "title": "DynamicsDuty",
+        "description": "An initiative focused on the Dynamics ecosystem, with practical content and a clear business and technology perspective built around Microsoft solutions."
+      },
+      "project3": {
+        "title": "YouTube Channel",
+        "description": "My YouTube channel, where I publish technical and educational content about Power Platform, Azure, AI, and other tools in the Microsoft ecosystem."
+      },
+      "project4": {
+        "title": "Udemy Course",
+        "description": "A Power Automate Cloud course designed to take learners from beginner level to a more solid, practical command of the platform through applied scenarios."
+      },
+      "project5": {
+        "title": "Power Platform Barcelona",
+        "description": "A Barcelona-based Power Platform community initiative focused on sharing knowledge, connecting professionals, and giving visibility to the ecosystem."
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's build something together",
+    "subtitle": "Whether through LinkedIn, YouTube, TheContent, or email, feel free to reach out if you'd like to talk about technology, content, or a potential project.",
+    "linkedin": "Connect on LinkedIn",
+    "youtube": "YouTube Channel",
+    "thecontent": "TheContent Profile",
+    "youtube_soon": "Coming soon",
+    "email": "Send an email"
+  },
+  "articles": {
+    "title": "Articles",
+    "subtitle": "Technical content that I will publish and manage through Azure Functions.",
+    "read_more": "Read article",
+    "back": "Back to list",
+    "not_found_title": "Article not found",
+    "not_found_description": "The requested article was not found or is not published yet."
+  },
+  "footer": {
+    "built": "Built with React, Tailwind CSS & Azure Static Web Apps",
+    "source": "View source",
+    "copyright": "Daniel Córdoba"
+  }
+}
