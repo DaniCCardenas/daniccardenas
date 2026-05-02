@@ -44,11 +44,11 @@
     "subtitle": "The domains where I spend most of my time building, learning, and consulting.",
     "cloud": {
       "title": "Cloud",
-      "description": "Designing and building cloud-native architectures on Azure. Infrastructure as code, serverless, microservices, DevOps, and cost-efficient solutions that scale."
+      "description": "Designing and building cloud-native architectures on Azure. Infrastructure as code, serverless solutions, and resilient, efficient platforms built to scale."
     },
     "ai": {
       "title": "Artificial Intelligence",
-      "description": "Applying AI to real-world problems — from LLM integrations and RAG pipelines to Azure AI services, Copilot extensibility, and responsible AI practices."
+      "description": "Applying AI to real-world problems — from LLM integrations and RAG pipelines to Azure AI services, Microsoft Fabric, Microsoft Agent Framework, Copilot extensibility, and responsible AI practices."
     },
     "powerplatform": {
       "title": "Power Platform",
