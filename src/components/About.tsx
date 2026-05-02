@@ -7,9 +7,10 @@ export default function About() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="about" style={{ padding: '96px 24px', maxWidth: '1100px', margin: '0 auto' }}>
+    <section id="about" className="terminal-section-shell terminal-section-about" style={{ padding: '96px 24px', maxWidth: '1100px', margin: '0 auto' }}>
       <div
         ref={ref}
+        className="terminal-section-grid"
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -22,6 +23,7 @@ export default function About() {
           initial={{ opacity: 0, x: -24 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5 }}
+          className="terminal-panel terminal-panel-heading"
           style={{ position: 'sticky', top: '80px' }}
         >
           <p
@@ -38,6 +40,7 @@ export default function About() {
             01. {t('about.title')}
           </p>
           <h2
+            className="terminal-heading"
             style={{
               fontSize: 'clamp(28px, 4vw, 40px)',
               fontWeight: 700,
@@ -55,6 +58,7 @@ export default function About() {
           initial={{ opacity: 0, x: 24 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
+          className="terminal-panel terminal-panel-body"
         >
           <p style={{ color: 'var(--color-fg-muted)', fontSize: '16px', lineHeight: 1.8, marginBottom: '20px' }}>
             {t('about.p1')}
@@ -72,6 +76,7 @@ export default function About() {
               href="https://www.linkedin.com/in/daniel-cordoba/"
               target="_blank"
               rel="noopener noreferrer"
+              className="terminal-link-chip"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

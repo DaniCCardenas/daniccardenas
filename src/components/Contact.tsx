@@ -10,6 +10,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      className="terminal-section-shell terminal-section-contact"
       style={{
         padding: '96px 24px',
         backgroundColor: 'var(--color-surface)',
@@ -18,6 +19,7 @@ export default function Contact() {
     >
       <div
         ref={ref}
+        className="terminal-panel terminal-panel-contact"
         style={{ maxWidth: '640px', margin: '0 auto', textAlign: 'center' }}
       >
         <motion.p
@@ -41,6 +43,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.4, delay: 0.05 }}
+          className="terminal-heading"
           style={{
             fontSize: 'clamp(24px, 4vw, 40px)',
             fontWeight: 700,
@@ -83,6 +86,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/daniel-cordoba/"
             target="_blank"
             rel="noopener noreferrer"
+            className="terminal-link-chip"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -121,6 +125,7 @@ export default function Contact() {
             href="https://www.youtube.com/@DaniCCardenas"
             target="_blank"
             rel="noopener noreferrer"
+            className="terminal-link-chip"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -159,6 +164,7 @@ export default function Contact() {
             href="https://www.thecontent.ai/creators/DaniCCardenas"
             target="_blank"
             rel="noopener noreferrer"
+            className="terminal-link-chip"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -195,6 +201,7 @@ export default function Contact() {
           {/* Email */}
           <a
             href="mailto:daniel@daniccardenas.com"
+            className="terminal-link-chip"
             style={{
               display: 'flex',
               alignItems: 'center',

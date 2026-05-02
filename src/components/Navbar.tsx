@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Github, Menu, X } from 'lucide-react';
+import { Github, Menu, Terminal, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import type { ThemeMode } from '../App';
 
-export default function Navbar() {
+type NavbarProps = {
+  themeMode: ThemeMode;
+  onToggleTheme: () => void;
+};
+
+export default function Navbar({ themeMode, onToggleTheme }: NavbarProps) {
   const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
@@ -133,6 +139,43 @@ export default function Navbar() {
 
           {/* Right controls */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginLeft: 'auto' }}>
+            <button
+              onClick={onToggleTheme}
+              title={themeMode === 'terminal' ? 'Disable terminal theme' : 'Enable terminal theme'}
+              aria-label={themeMode === 'terminal' ? 'Disable terminal theme' : 'Enable terminal theme'}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '12px',
+                fontWeight: 600,
+                padding: '4px 10px',
+                borderRadius: '999px',
+                border: `1px solid ${themeMode === 'terminal' ? 'var(--color-accent)' : 'var(--color-border)'}`,
+                background: themeMode === 'terminal' ? 'var(--color-accent-soft)' : 'rgba(22,27,34,0.9)',
+                color: themeMode === 'terminal' ? 'var(--color-accent)' : 'var(--color-fg-muted)',
+                cursor: 'pointer',
+                transition: 'color 0.15s, border-color 0.15s, background 0.15s',
+                letterSpacing: '0.05em',
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget;
+                el.style.color = 'var(--color-fg)';
+                el.style.borderColor = 'var(--color-accent)';
+                el.style.background = 'var(--color-accent-soft)';
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget;
+                el.style.color = themeMode === 'terminal' ? 'var(--color-accent)' : 'var(--color-fg-muted)';
+                el.style.borderColor = themeMode === 'terminal' ? 'var(--color-accent)' : 'var(--color-border)';
+                el.style.background = themeMode === 'terminal' ? 'var(--color-accent-soft)' : 'rgba(22,27,34,0.9)';
+              }}
+            >
+              <Terminal size={14} />
+              <span>CLI</span>
+            </button>
+
             {/* Lang toggle */}
             <button
               onClick={toggleLang}

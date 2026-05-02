@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { Github } from 'lucide-react';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -19,9 +18,9 @@ export default function Footer() {
           margin: '0 auto',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'space-between',
+          justifyContent: 'center',
           flexWrap: 'wrap',
-          gap: '12px',
+          gap: '10px 24px',
         }}
       >
         <p
@@ -38,27 +37,6 @@ export default function Footer() {
         <p style={{ fontSize: '12px', color: 'var(--color-fg-subtle)' }}>
           {t('footer.built')}
         </p>
-
-        <a
-          href="https://github.com/daniccardenas/daniccardenas"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            fontSize: '12px',
-            color: 'var(--color-fg-subtle)',
-            textDecoration: 'none',
-            transition: 'color 0.15s',
-            fontFamily: 'var(--font-mono)',
-          }}
-          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--color-fg-muted)'; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--color-fg-subtle)'; }}
-        >
-          <Github size={13} />
-          {t('footer.source')}
-        </a>
       </div>
     </footer>
   );

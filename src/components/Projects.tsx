@@ -9,7 +9,7 @@ export default function Projects() {
   const { ref, inView } = useInView();
 
   return (
-    <section id="projects" style={{ padding: '96px 24px', maxWidth: '1100px', margin: '0 auto' }}>
+    <section id="projects" className="projects-shell" style={{ padding: '96px 24px', maxWidth: '1100px', margin: '0 auto' }}>
       {/* Heading */}
       <div style={{ marginBottom: '56px' }}>
         <p
@@ -60,6 +60,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: i * 0.08, duration: 0.4 }}
+            className="project-card"
             style={{
               padding: '24px',
               borderRadius: '20px',
@@ -139,6 +140,7 @@ export default function Projects() {
               {project.tags.map(tag => (
                 <span
                   key={tag}
+                  className="project-tag"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '11px',
@@ -161,6 +163,7 @@ export default function Projects() {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="project-live-link"
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',

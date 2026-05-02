@@ -25,6 +25,7 @@ export default function Certifications() {
   return (
     <section
       id="certifications"
+      className="terminal-section-shell terminal-section-certifications"
       style={{
         padding: '96px 24px',
         backgroundColor: 'var(--color-surface)',
@@ -33,33 +34,36 @@ export default function Certifications() {
       }}
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
-        <p
-          style={{
-            fontFamily: 'var(--font-mono)',
-            fontSize: '12px',
-            color: 'var(--color-accent)',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            marginBottom: '12px',
-            fontWeight: 600,
-          }}
-        >
-          02. {t('certifications.title')}
-        </p>
-        <h2
-          style={{
-            fontSize: 'clamp(24px, 3.5vw, 36px)',
-            fontWeight: 700,
-            letterSpacing: '-0.02em',
-            color: 'var(--color-fg)',
-            marginBottom: '12px',
-          }}
-        >
-          {t('certifications.title')}
-        </h2>
-        <p style={{ color: 'var(--color-fg-muted)', fontSize: '15px', marginBottom: '36px', maxWidth: '680px' }}>
-          {t('certifications.subtitle')}
-        </p>
+        <div className="terminal-panel terminal-panel-heading" style={{ marginBottom: '36px' }}>
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '12px',
+              color: 'var(--color-accent)',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              marginBottom: '12px',
+              fontWeight: 600,
+            }}
+          >
+            02. {t('certifications.title')}
+          </p>
+          <h2
+            className="terminal-heading"
+            style={{
+              fontSize: 'clamp(24px, 3.5vw, 36px)',
+              fontWeight: 700,
+              letterSpacing: '-0.02em',
+              color: 'var(--color-fg)',
+              marginBottom: '12px',
+            }}
+          >
+            {t('certifications.title')}
+          </h2>
+          <p style={{ color: 'var(--color-fg-muted)', fontSize: '15px', marginBottom: 0, maxWidth: '680px' }}>
+            {t('certifications.subtitle')}
+          </p>
+        </div>
 
         <div
           ref={ref}
@@ -73,6 +77,7 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45 }}
+            className="terminal-card"
             style={{
               border: '1px solid var(--color-border)',
               borderRadius: 'var(--radius-lg)',
@@ -161,6 +166,7 @@ export default function Certifications() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45, delay: 0.1 }}
+            className="terminal-card"
             style={{
               border: '1px solid var(--color-border)',
               borderRadius: 'var(--radius-lg)',

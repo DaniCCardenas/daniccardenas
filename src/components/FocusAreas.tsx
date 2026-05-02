@@ -34,6 +34,7 @@ export default function FocusAreas() {
   return (
     <section
       id="focus"
+      className="terminal-section-shell terminal-section-focus"
       style={{
         padding: '96px 24px',
         background: 'linear-gradient(180deg, rgba(22,27,34,0.9), rgba(13,17,23,0.9))',
@@ -43,7 +44,7 @@ export default function FocusAreas() {
     >
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
         {/* Heading */}
-        <div style={{ textAlign: 'center', marginBottom: '64px' }}>
+        <div className="terminal-panel terminal-panel-heading" style={{ textAlign: 'center', marginBottom: '64px' }}>
           <p
             style={{
               fontFamily: 'var(--font-mono)',
@@ -58,6 +59,7 @@ export default function FocusAreas() {
             03. {t('focus.title')}
           </p>
           <h2
+            className="terminal-heading"
             style={{
               fontSize: 'clamp(24px, 3.5vw, 36px)',
               fontWeight: 700,
@@ -90,6 +92,7 @@ export default function FocusAreas() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: i * 0.1, duration: 0.45 }}
+                className="terminal-card"
                 style={{
                   padding: '28px',
                   borderRadius: '20px',

@@ -39,6 +39,12 @@
   --shadow-glow: 0 0 0 1px rgba(88, 166, 255, 0.08), 0 18px 60px rgba(14, 24, 39, 0.45);
 }
 
+:root {
+  --terminal-grid: rgba(22, 255, 145, 0.08);
+  --terminal-glow: rgba(22, 255, 145, 0.16);
+  --terminal-shadow: 0 0 0 1px rgba(22, 255, 145, 0.12), 0 18px 60px rgba(1, 24, 13, 0.48);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -75,6 +81,331 @@ body::before {
   pointer-events: none;
   background: linear-gradient(180deg, rgba(13, 17, 23, 0.2) 0%, rgba(13, 17, 23, 0.7) 100%);
   z-index: -1;
+}
+
+body[data-theme='terminal'] {
+  --color-canvas: #050b08;
+  --color-canvas-elevated: #09110d;
+  --color-surface: #08120d;
+  --color-surface-hover: #0d1a13;
+  --color-surface-strong: #030705;
+  --color-border: #153827;
+  --color-border-muted: #0d2419;
+
+  --color-fg: #d7ffe8;
+  --color-fg-muted: #83c9a6;
+  --color-fg-subtle: #397458;
+
+  --color-accent: #16ff91;
+  --color-accent-hover: #5effb3;
+  --color-accent-emphasis: #08c96b;
+  --color-accent-soft: rgba(22, 255, 145, 0.12);
+
+  --color-success: #16ff91;
+  --color-warning: #ffd166;
+  --color-danger: #ff6b6b;
+
+  --font-sans: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+  --shadow-card: var(--terminal-shadow);
+  --shadow-glow: var(--terminal-shadow);
+
+  background-image:
+    radial-gradient(circle at top left, var(--terminal-glow), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(255, 209, 102, 0.08), transparent 20%),
+    linear-gradient(rgba(8, 201, 107, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(8, 201, 107, 0.08) 1px, transparent 1px);
+  background-size: auto, auto, 28px 28px, 28px 28px;
+}
+
+body[data-theme='terminal']::before {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.55) 100%),
+    repeating-linear-gradient(180deg, rgba(22, 255, 145, 0.06) 0, rgba(22, 255, 145, 0.06) 1px, transparent 1px, transparent 4px);
+}
+
+body[data-theme='terminal'] h1,
+body[data-theme='terminal'] h2,
+body[data-theme='terminal'] h3,
+body[data-theme='terminal'] h4,
+body[data-theme='terminal'] h5,
+body[data-theme='terminal'] h6,
+body[data-theme='terminal'] p,
+body[data-theme='terminal'] a,
+body[data-theme='terminal'] span,
+body[data-theme='terminal'] button {
+  text-shadow: 0 0 10px rgba(22, 255, 145, 0.05);
+}
+
+body[data-theme='terminal'] #root {
+  position: relative;
+}
+
+body[data-theme='terminal'] #root::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 52%, rgba(0, 0, 0, 0.22) 100%);
+  mix-blend-mode: screen;
+  z-index: 20;
+}
+
+body[data-theme='terminal'] ::selection {
+  background: rgba(22, 255, 145, 0.28);
+  color: #031109;
+}
+
+.boot-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(2, 7, 5, 0.86);
+  backdrop-filter: blur(8px);
+}
+
+.boot-sequence__panel {
+  width: min(680px, 100%);
+  padding: 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(22, 255, 145, 0.28);
+  background:
+    linear-gradient(180deg, rgba(7, 22, 15, 0.98), rgba(4, 12, 8, 0.98)),
+    repeating-linear-gradient(180deg, rgba(22, 255, 145, 0.04) 0, rgba(22, 255, 145, 0.04) 1px, transparent 1px, transparent 3px);
+  box-shadow: 0 0 0 1px rgba(22, 255, 145, 0.08), 0 18px 70px rgba(0, 0, 0, 0.55);
+  font-family: var(--font-mono);
+}
+
+.boot-sequence__line {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: bootLineReveal 0.35s ease forwards;
+}
+
+.boot-sequence__line + .boot-sequence__line {
+  margin-top: 12px;
+}
+
+.boot-sequence__line:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.boot-sequence__line:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.boot-sequence__line:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bootLineReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body[data-theme='terminal'] .hero-shell {
+  isolation: isolate;
+}
+
+body[data-theme='terminal'] .hero-terminal-panel,
+body[data-theme='terminal'] .hero-terminal-aside,
+body[data-theme='terminal'] .project-card {
+  border-radius: 16px !important;
+  border-color: rgba(22, 255, 145, 0.22) !important;
+  background:
+    linear-gradient(180deg, rgba(5, 14, 10, 0.96), rgba(2, 8, 6, 0.98)) !important;
+  box-shadow: 0 0 0 1px rgba(22, 255, 145, 0.08), 0 14px 48px rgba(0, 0, 0, 0.46) !important;
+}
+
+body[data-theme='terminal'] .hero-terminal-panel::before,
+body[data-theme='terminal'] .hero-terminal-aside::before {
+  content: '> github-copilot-cli';
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(22, 255, 145, 0.72);
+  text-transform: uppercase;
+}
+
+body[data-theme='terminal'] .hero-terminal-panel,
+body[data-theme='terminal'] .hero-terminal-aside {
+  padding-top: 44px !important;
+}
+
+body[data-theme='terminal'] .hero-cta-primary {
+  background: linear-gradient(180deg, #16ff91, #08c96b) !important;
+  color: #041109 !important;
+  box-shadow: 0 0 0 1px rgba(22, 255, 145, 0.18), 0 0 22px rgba(22, 255, 145, 0.18) !important;
+}
+
+body[data-theme='terminal'] .hero-cta-secondary,
+body[data-theme='terminal'] .hero-link-pill,
+body[data-theme='terminal'] .hero-skill-pill,
+body[data-theme='terminal'] .project-live-link,
+body[data-theme='terminal'] .project-tag {
+  border-color: rgba(22, 255, 145, 0.2) !important;
+  background: rgba(22, 255, 145, 0.06) !important;
+  color: var(--color-fg) !important;
+}
+
+body[data-theme='terminal'] .project-card {
+  overflow: hidden;
+}
+
+body[data-theme='terminal'] .project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(22, 255, 145, 0.02), transparent 28%, transparent 72%, rgba(22, 255, 145, 0.04));
+}
+
+body[data-theme='terminal'] .projects-shell {
+  position: relative;
+}
+
+body[data-theme='terminal'] .projects-shell::before {
+  content: 'portfolio/projects --live';
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 10px;
+  border: 1px solid rgba(22, 255, 145, 0.18);
+  border-radius: 999px;
+  background: rgba(22, 255, 145, 0.05);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+body[data-theme='terminal'] .terminal-section-shell {
+  position: relative;
+}
+
+body[data-theme='terminal'] .terminal-section-shell::before {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  padding: 6px 10px;
+  border: 1px solid rgba(22, 255, 145, 0.18);
+  border-radius: 999px;
+  background: rgba(22, 255, 145, 0.05);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  z-index: 1;
+}
+
+body[data-theme='terminal'] .terminal-section-about::before {
+  content: 'portfolio/about --inspect';
+}
+
+body[data-theme='terminal'] .terminal-section-certifications::before {
+  content: 'portfolio/certifications --verify';
+}
+
+body[data-theme='terminal'] .terminal-section-focus::before {
+  content: 'portfolio/focus --capabilities';
+}
+
+body[data-theme='terminal'] .terminal-section-contact::before {
+  content: 'portfolio/contact --open';
+}
+
+body[data-theme='terminal'] .terminal-panel,
+body[data-theme='terminal'] .terminal-card {
+  position: relative;
+  border: 1px solid rgba(22, 255, 145, 0.18) !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(180deg, rgba(5, 14, 10, 0.96), rgba(2, 8, 6, 0.98)) !important;
+  box-shadow: 0 0 0 1px rgba(22, 255, 145, 0.06), 0 14px 48px rgba(0, 0, 0, 0.42) !important;
+}
+
+body[data-theme='terminal'] .terminal-panel {
+  padding: 24px !important;
+}
+
+body[data-theme='terminal'] .terminal-panel-heading {
+  padding-top: 36px !important;
+}
+
+body[data-theme='terminal'] .terminal-panel-heading::before,
+body[data-theme='terminal'] .terminal-panel-body::before,
+body[data-theme='terminal'] .terminal-panel-contact::before,
+body[data-theme='terminal'] .terminal-card::before {
+  content: '> exec';
+  position: absolute;
+  top: 12px;
+  left: 18px;
+  color: rgba(22, 255, 145, 0.72);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body[data-theme='terminal'] .terminal-panel-body {
+  padding-top: 40px !important;
+}
+
+body[data-theme='terminal'] .terminal-panel-contact {
+  padding: 36px 24px 24px !important;
+}
+
+body[data-theme='terminal'] .terminal-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body[data-theme='terminal'] .terminal-heading::after {
+  content: '_';
+  color: var(--color-accent);
+  animation: terminalCursorBlink 1s steps(1, end) infinite;
+}
+
+body[data-theme='terminal'] .terminal-link-chip {
+  border-color: rgba(22, 255, 145, 0.2) !important;
+  background: rgba(22, 255, 145, 0.05) !important;
+  color: var(--color-fg) !important;
+}
+
+body[data-theme='terminal'] .terminal-section-grid {
+  align-items: stretch !important;
+}
+
+@keyframes terminalCursorBlink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-theme='terminal'] .terminal-section-shell::before {
+    left: 16px;
+    top: 14px;
+  }
 }
 
 a {

@@ -39,6 +39,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      className="hero-shell"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setMouseGlow(current => ({ ...current, active: false }))}
       style={{
@@ -125,6 +126,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
+            className="hero-terminal-panel"
             style={{
               padding: '40px clamp(24px, 4vw, 44px)',
               borderRadius: 'var(--radius-xl)',
@@ -243,6 +245,7 @@ export default function Hero() {
             >
           <button
             onClick={() => handleScroll('#projects')}
+            className="hero-cta-primary"
             style={{
               padding: '12px 20px',
               borderRadius: '999px',
@@ -272,6 +275,7 @@ export default function Hero() {
 
           <button
             onClick={() => handleScroll('#contact')}
+            className="hero-cta-secondary"
             style={{
               padding: '12px 20px',
               borderRadius: '999px',
@@ -311,6 +315,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
+            className="hero-link-pill"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -347,6 +352,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="YouTube"
+            className="hero-link-pill"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -383,6 +389,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="TheContent"
+            className="hero-link-pill"
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -421,6 +428,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
+            className="hero-terminal-aside"
             style={{
               padding: '24px',
               borderRadius: 'var(--radius-xl)',
@@ -495,6 +503,7 @@ export default function Hero() {
                 {[t('focus.cloud.title'), t('focus.ai.title'), t('focus.powerplatform.title')].map(item => (
                   <div
                     key={item}
+                    className="hero-skill-pill"
                     style={{
                       padding: '12px 10px',
                       borderRadius: '16px',
